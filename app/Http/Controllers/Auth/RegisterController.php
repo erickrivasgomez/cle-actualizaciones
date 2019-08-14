@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -65,10 +66,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Profesor::create([
+        /*Profesor::create([
             'nombre' => $data['name'],
             'nivel' => 1,
-        ]);
+        ]);*/
 
         return User::create([
             'name' => $data['name'],
@@ -76,5 +77,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'username' => $data['username'],
         ]);
+    }
+
+    public function configurarPassword(Request $request){
+        $usuario = User::where('username', \request('username'))->get();
+        if (($usuario->count()) && \request('username')!='123') {
+            return 'bien';
+        } else {
+            return 'nombre de usuario no registrado en el sistema';
+        }
+        
+        
+        return $usuario->count();
     }
 }

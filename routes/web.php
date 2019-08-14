@@ -42,8 +42,10 @@ $coord_ajustes= [
 ];
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('login');
 });
+
+Route::post('/configurarPassword', 'Auth\RegisterController@configurarPassword')->name('configurarPassword');
 
 Auth::routes();
 
@@ -61,3 +63,7 @@ Route::post('coordinacion/ajustes/altaDocentesActivos', 'coordinacion\ajustesCon
     ->name('coordinacion.ajustes.altaDocentesActivos');
 Route::resource('actualizaciones', 'actualizacionesController');
 Route::resource('observacion', 'observacionController');
+
+Route::get('md5', function(){
+    echo md5("coordinacion");
+});
