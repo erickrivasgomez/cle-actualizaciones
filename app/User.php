@@ -49,9 +49,9 @@ class User extends Authenticatable
 
     public function clase () {
         if ($this->profesor) {
-            return '1';
+            return 1;
         } else if ($this->coordinador){
-            return '3';
+            return 3;
         }
     }
 }

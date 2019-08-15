@@ -63,7 +63,3 @@ Route::post('coordinacion/ajustes/altaDocentesActivos', 'coordinacion\ajustesCon
     ->name('coordinacion.ajustes.altaDocentesActivos');
 Route::resource('actualizaciones', 'actualizacionesController');
 Route::resource('observacion', 'observacionController');
-
-Route::get('md5', function(){
-    echo md5("coordinacion");
-});
