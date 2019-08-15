@@ -79,15 +79,4 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function configurarPassword(Request $request){
-        $usuario = User::where('username', \request('username'))->get();
-        if (($usuario->count()) && \request('username')!='123') {
-            return 'bien';
-        } else {
-            return 'nombre de usuario no registrado en el sistema';
-        }
-        
-        
-        return $usuario->count();
-    }
 }

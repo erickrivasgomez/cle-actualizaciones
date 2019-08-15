@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    @if (Session::has('passwordActualizada'))
+    <div class="alert alert-info">{{ Session::get('passwordActualizada') }}</div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

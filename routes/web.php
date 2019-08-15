@@ -42,10 +42,10 @@ $coord_ajustes= [
 ];
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth.login');
 });
 
-Route::post('/configurarPassword', 'Auth\RegisterController@configurarPassword')->name('configurarPassword');
+Route::post('/home', 'HomeController@resetPassword')->name('home');
 
 Auth::routes();
 
