@@ -6,10 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Period extends Model
 {
-    protected $fillable = [
-        'nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'vigente'
-    ];
-    //
+    protected $guarded = [];    
+    
     public function actualizaciones()
     {
         return $this->hasMany('App\Actualizacion', 'id_periodo');

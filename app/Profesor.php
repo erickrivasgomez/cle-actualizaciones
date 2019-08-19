@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profesor extends Model
 {
-    protected $fillable = [
-        'nombre', 'nivel',
-    ];
+    protected $guarded = [];    
 
     public function actualizaciones()
     {

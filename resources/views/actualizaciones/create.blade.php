@@ -53,8 +53,8 @@
                     <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" placeholder="Fin" value="{{old('fecha_fin')}}" required>
                 </div>
             <div class="col-sm-6 mb-3 my-1 col-12">
-                <label for="archivo">Archivo PDF: Evidencia / Certificado / Diploma (NO mayor a 5 MB)</label>
-                    <input type="file" class="form-control-file" name="archivo" id="archivo" value="{{old('archivo')}}" accept="application/pdf" required>
+                <label for="evidencia">Evidencia: archivo PDF (Certificado / Diploma) (NO mayor a 5 MB)</label>
+                    <input type="file" class="form-control-file" name="evidencia" id="evidencia" value="{{old('evidencia')}}" accept="application/pdf" required>
             </div>
         </div>
         <div class="text-center form-group">

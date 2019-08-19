@@ -73,7 +73,7 @@ class actualizacionesController extends Controller
         $reglas = array(
             'nombre_curso' => 'required',
             'descripcion' => 'required|min:15',
-            'archivo' => 'required|file|mimes:pdf|max:5120',
+            'evidencia' => 'required|file|mimes:pdf|max:5120',
             'duracion' => 'required|integer|min:1',
             'instruido_por' => 'required',
             'fecha_inicio' => 'required|before_or_equal:fecha_fin',
@@ -101,7 +101,7 @@ class actualizacionesController extends Controller
 
             $actualizacion->nombre_curso = \request('nombre_curso');
             $actualizacion->descripcion = \request('descripcion');
-            $actualizacion->archivo = \request('archivo');
+            $actualizacion->archivo = \request('evidencia');
             $actualizacion->duracion = \request('duracion');
             $actualizacion->instruido_por = \request('instruido_por');
             $actualizacion->fecha_inicio = \request('fecha_inicio');
@@ -110,9 +110,9 @@ class actualizacionesController extends Controller
             $actualizacion->id_sublinea_capacitacion = \request('id_sublinea_capacitacion');
 
             Session::flash('message', 'Actualización agregada correctamente.');
-            $path = $request->file('archivo')->store('public/evidencia/' . $id_profesor);
+            $path = $request->file('evidencia')->store('public/evidencia/' . $id_profesor);
             $actualizacion->archivo = $path;
-            $actualizacion->id_periodo = '1';
+            $actualizacion->id_periodo = Period::where('vigente', true)->first()->id;
             $actualizacion->id_status = '1';
             $actualizacion->id_profesor = $id_profesor;
             $actualizacion->save();

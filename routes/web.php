@@ -1,5 +1,7 @@
 <?php
 
+use App\Coordinador;
+use Illuminate\Support\Facades\Hash;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -9,7 +11,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 $coord_actualizaciones = [
     'index' => 'coordinacion.actualizaciones.index',
@@ -18,7 +20,7 @@ $coord_actualizaciones = [
     'edit' => 'coordinacion.actualizaciones.edit',
     'update' => 'coordinacion.actualizaciones.update',
     'show' => 'coordinacion.actualizaciones.show',
-    'destroy' => 'coordinacion.actualizaciones.destroy'
+    'destroy' => 'coordinacion.actualizaciones.destroy',
 ];
 
 $coord_observacion = [
@@ -28,17 +30,17 @@ $coord_observacion = [
     'edit' => 'coordinacion.observacion.edit',
     'update' => 'coordinacion.observacion.update',
     'show' => 'coordinacion.observacion.show',
-    'destroy' => 'coordinacion.observacion.destroy'
+    'destroy' => 'coordinacion.observacion.destroy',
 ];
 
-$coord_ajustes= [
+$coord_ajustes = [
     'index' => 'coordinacion.ajustes.index',
     'create' => 'coordinacion.ajustes.create',
     'store' => 'coordinacion.ajustes.store',
     'edit' => 'coordinacion.ajustes.edit',
     'update' => 'coordinacion.ajustes.update',
     'show' => 'coordinacion.ajustes.show',
-    'destroy' => 'coordinacion.ajustes.destroy'
+    'destroy' => 'coordinacion.ajustes.destroy',
 ];
 
 Route::get('/', function () {
@@ -51,7 +53,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('coordinacion', function(){return view('coordinacion.index');})->name('coordinacion');
+Route::get('coordinacion', function () {return view('coordinacion.index');})->name('coordinacion');
 Route::resource('coordinacion/actualizaciones', 'coordinacion\actualizacionesController')->names($coord_actualizaciones);
 Route::resource('coordinacion/observacion', 'coordinacion\observacionController')->names($coord_observacion);
 Route::get('coordinacion/ajustes', 'coordinacion\ajustesController@index')->name('coordinacion.ajustes.index');
@@ -63,3 +65,37 @@ Route::post('coordinacion/ajustes/altaDocentesActivos', 'coordinacion\ajustesCon
     ->name('coordinacion.ajustes.altaDocentesActivos');
 Route::resource('actualizaciones', 'actualizacionesController');
 Route::resource('observacion', 'observacionController');
+
+Route::get('seed', function () {
+
+    $filename = base_path('database/seeders/coordinadors.csv');
+    $delimitor = ',';
+
+    Coordinador::truncate();
+
+    if (!file_exists($filename) || !is_readable($filename)) {
+        return false;
+    }
+    $header = null;
+    $row = null;
+
+    if (($handle = fopen($filename, 'r')) !== false) {
+        while (($row = fgetcsv($handle, 1000, $delimitor)) !== false) {
+            if (!$header) {
+                $header = $row;
+            } else {
+
+                $seed = new Coordinador; // 
+
+                $seed->id = $row[0];
+                $seed->id_user = $row[1];
+                $seed->created_at = $row[2];
+                $seed->updated_at = $row[3];
+
+                $seed->save();
+                echo var_dump($row);
+            }
+        }
+        fclose($handle);
+    }
+});
