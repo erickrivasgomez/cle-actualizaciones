@@ -51,5 +51,8 @@ class User extends Authenticatable
         } else if ($this->coordinador){
             return 3;
         }
+        if($this->id==1){
+            return 0;
+        }
     }
 }

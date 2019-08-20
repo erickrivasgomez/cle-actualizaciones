@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -12,7 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $filename = base_path('database/seeders/users.csv');
-        $delimitor-',';
+        $delimitor=',';
 
         User::truncate();
 
@@ -28,12 +29,15 @@ class UsersTableSeeder extends Seeder
                 if (!$header) {
                     $header = $row;
                 } else {
-                    //$data[] = array_combine($header, $row);
+                    // id,name,email,email_verified_at,password,remember_token,created_at,updated_at,username,password_changed
                     User::create([
-                        'name' => $data['name'],
-                        'email' => $data['email'],
-                        'password' => Hash::make($data['password']),
-                        'username' => $data['username'],
+                        'id' => $row[0],
+                        'name' => $row[1],
+                        'email' => $row[2],
+                        'password' => $row[4],
+                        'updated_at' => $row[7],
+                        'username' => $row[8],
+                        'password_changed' => $row[9],
                     ]);
                 }
             }

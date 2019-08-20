@@ -1,6 +1,4 @@
 id,name,email,email_verified_at,password,remember_token,created_at,updated_at,username,password_changed
-2,Usuario 2,usuario2@mail.com,,$2y$10$fvX/0YyJdqHb1hAts46yaeBVciIh92xmBgXZeD01oSvq2NqsNoRyG,,2019-06-13 05:56:56,2019-08-15 14:53:09,Usuario 2,t
-3,Profesor 1,profesor1@mail.com,,$2y$10$fvX/0YyJdqHb1hAts46yaeBVciIh92xmBgXZeD01oSvq2NqsNoRyG,,2019-06-13 06:34:21,2019-08-15 14:53:09,Profesor 1,t
 10,BRENDA MARGOT HERNANDEZ TRUJILLO,BBMARGOT@HOTMAIL.COM,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,brendahernandez,f
 12,CECILIA  GABRIELA CRUZ HUAZANO,CGCHUAZANO@HOTMAIL.COM,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,ceciliacruz,f
 14,AURELIO AMAURY CORIA RAMIREZ,R2D2.SH.28@HOTMAIL.COM,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,123,f
@@ -13,8 +11,7 @@ id,name,email,email_verified_at,password,remember_token,created_at,updated_at,us
 27,VERONICA RAMIREZ GAONA,VERORAMG@HOTMAIL.COM,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,123,f
 30,OSVALDO SOLIS HERNANDEZ,30@mail.com,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,123,f
 31,ALICIA DE MONSERRAT LOZANO BERBER,31@mail.com,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,123,f
-7,test test test,test@test.com,,testpassword,,2019-08-14 10:30:49,2019-08-14 10:30:49,testtest,f
-1,Erick Rivas Gomez,rivaserick@outlook.com,,$2y$10$fvX/0YyJdqHb1hAts46yaeBVciIh92xmBgXZeD01oSvq2NqsNoRyG,q8fVXABQRXVYrbI19Z3xIoOmHoSZGlF5Ln63IUuNeQz3v5SBOi5Vc50s6l3c,2019-06-05 17:32:36,2019-08-15 14:53:09,erickrg,t
+1,Administrador,administrador@mail.com,,$2y$10$EmDzxxLtW6iqWrXWexzd1uonLyTJh.QwUZ/4NE4fZMe7IyTl3Z/Fy,q8fVXABQRXVYrbI19Z3xIoOmHoSZGlF5Ln63IUuNeQz3v5SBOi5Vc50s6l3c,2019-06-05 17:32:36,2019-08-15 14:53:09,administrador,t
 32,SHARON ZUJEIRY HERNANDEZ DELGADO,32@mail.com,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,123,f
 33,ABRAHAM MONTAÑEZ ARCIGA,CHACK_2006@HOTMAIL.COM,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,abrahammontañez,f
 36,MARIA CAROL RAMIREZ GARCIDUEÑAS,MACARAGA@HOTMAIL.COM,,$2y$10$5GtGKSlbunytlNzETzWVt.xJhYY8pYhnRgWc3XzkIKfB10lb2XXPi,,,2019-08-15 14:54:22,123,f
